@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 import Controls from './Controls'
 import Animator from './Animator'
-import Triangle from './Path'
+import TrianglePath from './Path'
+import Circle from './Circle'
 
 import {TransitionGroup} from 'react-transition-group'
 
@@ -57,7 +57,8 @@ export default class App extends Component {
     const height = 800
     const rotation = this.state.rotation.cur
 
-    const triangle = <Triangle />
+    const trianglePath = <TrianglePath />
+    const circle = <Circle />
     
     const animate = this.state.animate ? 
       <Animator 
@@ -80,7 +81,8 @@ export default class App extends Component {
               onClickCapture={this.fullRotation.bind(this)}
             >
               {animate}
-              {triangle}
+              {trianglePath}
+              {circle}
             </TransitionGroup>
 
           </g>
@@ -89,4 +91,3 @@ export default class App extends Component {
     )
   }
 }
-// <Controls rotateLeft={this.rotateLeft()} rotateLeft={this.rotateRight()}/>
